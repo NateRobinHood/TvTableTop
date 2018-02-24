@@ -18,6 +18,7 @@ namespace TvTableTop.UserControls
         public event EventHandler OnSettings;
         public event EventHandler OnMinMax;
         public event EventHandler OnRemoveItem;
+        public event EventHandler OnRemoveAllItems;
         public event EventHandler OnStartMask;
         public event EventHandler OnEndMask;
         public event EventHandler OnDock;
@@ -100,6 +101,11 @@ namespace TvTableTop.UserControls
         private void cmdDock_Click(object sender, EventArgs e)
         {
             OnDock?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void cmdRemoveAll_Click(object sender, EventArgs e)
+        {
+            OnRemoveAllItems?.Invoke(this, EventArgs.Empty);
         }
     }
 }

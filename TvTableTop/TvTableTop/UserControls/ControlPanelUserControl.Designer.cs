@@ -45,9 +45,10 @@
             this.cmdLoad = new System.Windows.Forms.ToolStripButton();
             this.cmdSettings = new System.Windows.Forms.ToolStripButton();
             this.cmdMinMax = new System.Windows.Forms.ToolStripButton();
+            this.cmdDock = new System.Windows.Forms.ToolStripButton();
             this.ItemsTab = new System.Windows.Forms.TabPage();
             this.listViewItems = new TvTableTop.Components.ListViewGifItems(this.components);
-            this.cmdDock = new System.Windows.Forms.ToolStripButton();
+            this.cmdRemoveAll = new System.Windows.Forms.Button();
             this.RollupBar.SuspendLayout();
             this.ExplorerTab.SuspendLayout();
             this.gbMasks.SuspendLayout();
@@ -126,6 +127,7 @@
             // 
             // gbItems
             // 
+            this.gbItems.Controls.Add(this.cmdRemoveAll);
             this.gbItems.Controls.Add(this.itemSizeControl);
             this.gbItems.Controls.Add(this.lblItemSize);
             this.gbItems.Controls.Add(this.cmdRemoveItem);
@@ -235,6 +237,16 @@
             this.cmdMinMax.Text = "Min/Max";
             this.cmdMinMax.Click += new System.EventHandler(this.cmdMinMax_Click);
             // 
+            // cmdDock
+            // 
+            this.cmdDock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cmdDock.Image = ((System.Drawing.Image)(resources.GetObject("cmdDock.Image")));
+            this.cmdDock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cmdDock.Name = "cmdDock";
+            this.cmdDock.Size = new System.Drawing.Size(84, 22);
+            this.cmdDock.Text = "Dock/Undock";
+            this.cmdDock.Click += new System.EventHandler(this.cmdDock_Click);
+            // 
             // ItemsTab
             // 
             this.ItemsTab.Controls.Add(this.listViewItems);
@@ -258,15 +270,15 @@
             this.listViewItems.TabIndex = 0;
             this.listViewItems.UseCompatibleStateImageBehavior = false;
             // 
-            // cmdDock
+            // cmdRemoveAll
             // 
-            this.cmdDock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cmdDock.Image = ((System.Drawing.Image)(resources.GetObject("cmdDock.Image")));
-            this.cmdDock.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cmdDock.Name = "cmdDock";
-            this.cmdDock.Size = new System.Drawing.Size(84, 22);
-            this.cmdDock.Text = "Dock/Undock";
-            this.cmdDock.Click += new System.EventHandler(this.cmdDock_Click);
+            this.cmdRemoveAll.Location = new System.Drawing.Point(6, 48);
+            this.cmdRemoveAll.Name = "cmdRemoveAll";
+            this.cmdRemoveAll.Size = new System.Drawing.Size(75, 23);
+            this.cmdRemoveAll.TabIndex = 3;
+            this.cmdRemoveAll.Text = "Remove All";
+            this.cmdRemoveAll.UseVisualStyleBackColor = true;
+            this.cmdRemoveAll.Click += new System.EventHandler(this.cmdRemoveAll_Click);
             // 
             // ControlPanelUserControl
             // 
@@ -310,5 +322,6 @@
         private System.Windows.Forms.TabPage ItemsTab;
         private Components.ListViewGifItems listViewItems;
         private System.Windows.Forms.ToolStripButton cmdDock;
+        private System.Windows.Forms.Button cmdRemoveAll;
     }
 }

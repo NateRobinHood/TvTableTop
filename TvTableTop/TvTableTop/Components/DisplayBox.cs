@@ -164,6 +164,12 @@ namespace TvTableTop.Components
             this.Invalidate();
         }
 
+        public void ClearItems()
+        {
+            m_items.Clear();
+            this.Invalidate();
+        }
+
         public void CenterImage()
         {
             if (this.Image != null)

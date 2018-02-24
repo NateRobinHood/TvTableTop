@@ -46,6 +46,7 @@ namespace TvTableTop
             m_ControlPanel.OnSettings += cmdSettings_Click;
             m_ControlPanel.OnMinMax += cmdMinMax_Click;
             m_ControlPanel.OnRemoveItem += cmdRemoveItem_Click;
+            m_ControlPanel.OnRemoveAllItems += ControlPanel_OnRemoveAllItems;
             m_ControlPanel.OnStartMask += cmdStartMask_Click;
             m_ControlPanel.OnEndMask += cmdEndMask_Click;
             m_ControlPanel.OnDock += ControlPanel_OnDock;
@@ -234,6 +235,11 @@ namespace TvTableTop
                 m_ControlPanelForm.Close();
                 m_ControlPanelForm = null;
             }
+        }
+
+        private void ControlPanel_OnRemoveAllItems(object sender, EventArgs e)
+        {
+            MainContentWindow.ClearItems();
         }
     }
 }
