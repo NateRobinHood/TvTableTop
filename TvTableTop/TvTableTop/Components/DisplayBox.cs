@@ -23,6 +23,7 @@ namespace TvTableTop.Components
         private List<Mask> m_masks = new List<Mask>();
         private Timer m_animationTimer;
         private bool m_cellSelection = false;
+        private Size m_cellSelectionSize = new Size(1, 1);
         private Point m_cellMousePoint = Point.Empty;
 
         //paint variables
@@ -117,6 +118,18 @@ namespace TvTableTop.Components
             set
             {
                 m_cellSelection = value;
+            }
+        }
+
+        public Size CellSelectionSize
+        {
+            get
+            {
+                return m_cellSelectionSize;
+            }
+            set
+            {
+                m_cellSelectionSize = value;
             }
         }
 
@@ -281,7 +294,7 @@ namespace TvTableTop.Components
                 {
                     using (Brush highlight = new SolidBrush(Color.FromArgb(100, Color.Yellow)))
                     {
-                        Rectangle highlightRec = new Rectangle(SnapToScaledGrid(m_cellMousePoint), new Size(Convert.ToInt32(m_scaleDpi), Convert.ToInt32(m_scaleDpi)));
+                        Rectangle highlightRec = new Rectangle(SnapToScaledGrid(m_cellMousePoint), new Size(Convert.ToInt32(m_scaleDpi) * m_cellSelectionSize.Width, Convert.ToInt32(m_scaleDpi) * m_cellSelectionSize.Height));
                         e.Graphics.FillRectangle(highlight, highlightRec);
                     }
                 }
